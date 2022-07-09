@@ -1,0 +1,14 @@
+1) Write a method called findNote that finds the first opening and the last closing parenthesis in
+a given string and returns the string inside. If not found or if the closing parenthesis precedes
+the opening one, your method should return the original string unchanged.
+
+2) Fill in the missing code in the following method:
+// Returns true if p matches, case blind, a substring of s;
+// otherwise returns false.
+	
+	public boolean hasMatch(String s, String p)
+	{
+		// missing code
+	}
+
+3) Write a method that tests whether a given string contains only digits.
