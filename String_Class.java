@@ -39,8 +39,8 @@ public class String_Class {
 //        System.out.println(username.length());
 //        System.out.println(username.trim().length());
 
-        String compName = "Jack, .Parsley";
-        String[] names = compName.split(", .");
+        String compName = "Jack Parsley";
+        String[] names = compName.split(" ");
         System.out.println(names[0]);
         System.out.println(names[1]);
 
