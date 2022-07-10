@@ -12,3 +12,4 @@ public class MemoryInString {
 
 // 1) Stack
 // 2) Heap
+    // - String Constant Pool (SCP)
