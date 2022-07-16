@@ -25,7 +25,7 @@
 // 3) protected
 // 4) default
 
-// Inheritance
+// Inheritance -> (Reusability)
 
 
 
