@@ -11,6 +11,7 @@ public class MergeSort {
         System.out.println(Arrays.toString(arr));
     }
 
+    // used to divide until we get ind. array elements
     private static void mergeSort(int[] arr, int low, int high) {
         // atleast two elements are present
         if (low < high) {
@@ -21,6 +22,7 @@ public class MergeSort {
         }
     }
 
+    // responsible for merging two sorted arrays
     private static void merge(int[] arr, int low, int mid, int high) {
         int i = low;
         int j = mid + 1;
@@ -38,19 +40,25 @@ public class MergeSort {
             k++;
         }
 
+        // first sub array got exhausted
         if (i > mid) {
+            // fetching remaining elements directly from 2nd sub array
             while (j <= high) {
                 auxArr[k] = arr[j];
                 k++;
                 j++;
             }
-        } else {
+        }
+        // second sub array got exhausted
+        else {
+            // fetching remaining elements directly from 1st sub array
             while (i <= mid) {
                 auxArr[k] = arr[i];
                 k++;
                 i++;
             }
         }
+        // putting sorted sub array elements from aux array to main array
         for (int m = low; m <= high; m++)
             arr[m] = auxArr[m];
     }
