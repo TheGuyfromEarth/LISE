@@ -8,7 +8,8 @@ import java.util.Arrays;
 public class SortThreeItems {
     public static void main(String[] args) {
         int[] arr = {0, 1, 0, 0, 1, 2, 2, 2, 1, 1, 0};
-        sortItems(arr);
+//        sortItems(arr);
+        onePass(arr);
         System.out.println(Arrays.toString(arr));
     }
 
@@ -50,11 +51,32 @@ public class SortThreeItems {
     // 2) All elements after high will be 2;
 
     // 3) Run a loop until mid<=high; mid moves one step at a time
-        // 3a) mid == 0 -> swap(low++,mid++)
-        // 3b) mid == 1 -> continue
-        // 3c) mid == 2 -> swap(mid,high--)
+    // 3a) mid == 0 -> swap(low++,mid++)
+    // 3b) mid == 1 -> continue
+    // 3c) mid == 2 -> swap(mid,high--)
 
-    private static void onePass(){
+    private static void onePass(int[] arr) {
+        int low = 0;
+        int mid = 0;
+        int high = arr.length - 1;
 
+        while (mid <= high) {
+            if (arr[mid] == 0) {
+                swap(arr, low, mid);
+                low++;
+                mid++;
+            } else if (arr[mid] == 1) {
+                mid++;
+            } else {
+                swap(arr, mid, high);
+                high--;
+            }
+        }
+    }
+
+    private static void swap(int[] arr, int i, int j) {
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
     }
 }
