@@ -3,7 +3,7 @@ public class DecodeString {
     static int count=0;
 
     public static void main(String[] args) {
-        String word = "1224"; 
+        String word = "1224";
         decodeString("",0,word);
         System.out.println(count);
     }
