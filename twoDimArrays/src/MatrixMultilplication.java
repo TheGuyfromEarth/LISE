@@ -18,7 +18,7 @@ public class MatrixMultilplication {
             for(int i=0;i<res.length;i++){
                 for(int j=0;j<res[0].length;j++){
                     for(int k=0;k<mat1[0].length;k++){
-                        res[i][j] = res[i][j]+(mat1[i][k] * mat2[k][j]);
+                        res[i][j] += (mat1[i][k] * mat2[k][j]);
                     }
                 }
             }

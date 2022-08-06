@@ -8,6 +8,8 @@ public class EqualityofArrays {
                         {20,10,40},
                         {40, 0,50}};
 
+        int[][] arr3 = arr1; // shallow copy
+
         int[][] arr2 = {{10,20,30},
                         {20,10,40},
                         {40, 0,50}};
