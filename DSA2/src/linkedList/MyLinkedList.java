@@ -145,4 +145,10 @@ public class MyLinkedList {
             size--;
         }
     }
+
+    public void addNodeAtEnd(Node node){
+        this.tail.next = node;
+        tail = node;
+        size++;
+    }
 }
