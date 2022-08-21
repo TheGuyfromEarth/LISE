@@ -151,4 +151,12 @@ public class MyLinkedList {
         tail = node;
         size++;
     }
+
+    public Node getHead(){
+       return head;
+    }
+
+    public int getSize(){
+        return  size;
+    }
 }
