@@ -26,6 +26,7 @@ public class MyLinkedList {
             System.out.print(temp.data + " ");
             temp = temp.next;
         }
+        System.out.println();
     }
 
     public void addFirst(int data) {
@@ -154,6 +155,17 @@ public class MyLinkedList {
 
     public Node getHead(){
        return head;
+    }
+    public Node getTail(){
+       return tail;
+    }
+
+    public void setHead(Node head) {
+        this.head = head;
+    }
+
+    public void setTail(Node tail) {
+        this.tail = tail;
     }
 
     public int getSize(){
