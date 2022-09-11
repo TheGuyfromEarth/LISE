@@ -9,11 +9,10 @@ import java.util.Arrays;
 public class FirstNegativeInKSlidingWindow {
     public static void main(String[] args) {
         int[] arr = {-1, 10, -4, 1, 3, -4, -2, -1, 9, -2};
-        int k = 2;
+        int k = 3;
         System.out.println(Arrays.toString(arr));
         System.out.println(Arrays.toString(firstNegInKWindow(arr, k)));
     }
-
     public static int[] firstNegInKWindow(int[] arr, int k) {
         int[] ans = new int[arr.length - k + 1];
         ArrayDeque<Integer> arrayDeque = new ArrayDeque<>();
