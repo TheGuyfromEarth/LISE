@@ -17,23 +17,15 @@ public class SumOfMinandMaxInKSlidingWindow {
         int sum = 0;
 
         // evaluate first window
-        int maxIndex = 0;
-        int minIndex = 0;
+        for (int i = 0; i < k; i++) {
+            while (!maxDeque.isEmpty() && arr[i] >= arr[maxDeque.getLast()])
+                maxDeque.removeLast();
 
-        minDeque.add(0);
-        maxDeque.add(0);
+            while (!minDeque.isEmpty() && arr[i] <= arr[minDeque.getLast()])
+                minDeque.removeLast();
 
-        for (int i = 1; i < k; i++) {
-            if (arr[i] > arr[maxIndex]) {
-                maxIndex = i;
-                maxDeque.addFirst(i);
-            } else
-                maxDeque.add(i);
-            if (arr[i] < arr[minIndex]) {
-                minIndex = i;
-                minDeque.addFirst(i);
-            } else
-                minDeque.add(i);
+            maxDeque.add(i);
+            minDeque.add(i);
         }
 
         sum += arr[minDeque.peek()] + arr[maxDeque.peek()];
@@ -49,18 +41,14 @@ public class SumOfMinandMaxInKSlidingWindow {
                 maxDeque.remove();
             }
 
-            if (!minDeque.isEmpty()) {
-                if (arr[minDeque.peek()] > arr[j + k - 1])
-                    minDeque.addFirst(j + k - 1);
-                else
-                    minDeque.add(j + k - 1);
-            }
-            if (!maxDeque.isEmpty()) {
-                if (arr[maxDeque.peek()] < arr[j + k - 1])
-                    maxDeque.addFirst(j + k - 1);
-                else
-                    maxDeque.add(j + k - 1);
-            }
+            while (!maxDeque.isEmpty() && arr[j + k - 1] >= arr[maxDeque.getLast()])
+                maxDeque.removeLast();
+
+            while (!minDeque.isEmpty() && arr[j + k - 1] <= arr[minDeque.getLast()])
+                minDeque.removeLast();
+
+            maxDeque.add(j + k - 1);
+            minDeque.add(j + k - 1);
 
             // update sum
             sum += arr[minDeque.peek()] + arr[maxDeque.peek()];
