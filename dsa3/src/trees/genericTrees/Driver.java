@@ -11,7 +11,7 @@ public class Driver {
 
     public static Node getRoot(){
         GenericTree tree = new GenericTree();
-        int[] arr = {10,20,40,-1,50,-1,-1,30,60,-1,70,-1,80,90,-1,-1,-1,-1};
+        int[] arr = {10,20,40,-1,50,-1,-1,30,60,-1,70,-1,80,90,-1,100,-1,-1,-1,-1};
         return tree.createTree(arr);
     }
 }
