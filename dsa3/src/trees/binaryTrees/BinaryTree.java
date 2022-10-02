@@ -1,7 +1,5 @@
 package trees.binaryTrees;
 
-import com.sun.source.tree.Tree;
-
 import java.util.Stack;
 
 public class BinaryTree {
@@ -14,7 +12,7 @@ public class BinaryTree {
     }
 
     public static Node createTree(Integer[] arr) {
-        // (10,2)
+
         Stack<TreeNode> stack = new Stack<>();
         Node root = null;
         for (Integer i : arr) {
