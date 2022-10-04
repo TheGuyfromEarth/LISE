@@ -6,19 +6,22 @@ public class DeletingLeafNodes {
         Node root = DisplayBinaryTree.getBinaryTree();
         System.out.println("Before deleting leaf nodes");
         DisplayBinaryTree.displayTree(root);
-        deleteLeafNodes(root);
+        root = deleteLeafNodes(root);
         System.out.println("After deleting leaf nodes");
         DisplayBinaryTree.displayTree(root);
     }
 
-    public static void deleteLeafNodes(Node node) {
+    public static Node deleteLeafNodes(Node node) {
         if (node == null)
-            return;
+            return null;
         if (node.leftChild == null && node.rightChild == null) {
-            node = null;
-            return;
+            return null;
         }
-        deleteLeafNodes(node.leftChild);
-        deleteLeafNodes(node.rightChild);
+        node.leftChild = deleteLeafNodes(node.leftChild);
+        node.rightChild = deleteLeafNodes(node.rightChild);
+        return node;
     }
 }
+
+
+
