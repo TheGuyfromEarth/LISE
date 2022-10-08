@@ -1,13 +1,31 @@
 package trees.binarySearchTree;
 
+import trees.binaryTrees.Node;
+
 public class Driver {
     public static void main(String[] args) {
         BinarySearchTree bst = new BinarySearchTree();
         Node root = null;
-        bst.insertNode(root,20);
-        bst.insertNode(root,32);
-        bst.insertNode(root,10);
-        bst.insertNode(root,78);
-        bst.insertNode(root,30);
+        root = bst.insertNode(root,20);
+        root = bst.insertNode(root,32);
+        root = bst.insertNode(root,10);
+        root = bst.insertNode(root,78);
+        root = bst.insertNode(root,30);
+        bst.displayInOrder(root);
+        System.out.println();
+        System.out.println(bst.search(root, 56));
+        System.out.println(bst.max(root));
+
+    }
+
+    public static Node createBST(){
+        BinarySearchTree bst = new BinarySearchTree();
+        Node root = null;
+        root = bst.insertNode(root,20);
+        root = bst.insertNode(root,32);
+        root = bst.insertNode(root,10);
+        root = bst.insertNode(root,78);
+        root = bst.insertNode(root,30);
+        return root;
     }
 }
