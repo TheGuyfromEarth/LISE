@@ -44,12 +44,42 @@ public class BinarySearchTree {
         return search(node.rightChild, value);
     }
 
-    public int max(Node node){
-        if(node == null)
+    public int max(Node node) {
+        if (node == null)
             return Integer.MIN_VALUE;
 
-        if(node.rightChild !=null)
+        if (node.rightChild != null)
             return max(node.rightChild);
         return node.data;
+    }
+
+    public Node deleteNode(Node node, int value) {
+        if (node == null)
+            return null;
+        if (node.data == value) {
+            if (node.leftChild == null)
+                return node.rightChild;
+            else if (node.rightChild == null)
+                return node.leftChild;
+            else {
+                // both the children are present
+                // find replacement value
+                int min = minValue(node.rightChild);
+                node.data = min;
+                deleteNode(node.rightChild, min);
+            }
+        }
+        if (value < node.data)
+            node.leftChild = deleteNode(node.leftChild, value);
+        else
+            node.rightChild = deleteNode(node.rightChild, value);
+        return node;
+    }
+
+    public static int minValue(Node node) {
+        if (node.leftChild != null)
+            return minValue(node.leftChild);
+        else
+            return node.data;
     }
 }

@@ -13,8 +13,14 @@ public class Driver {
         root = bst.insertNode(root,30);
         bst.displayInOrder(root);
         System.out.println();
-        System.out.println(bst.search(root, 56));
-        System.out.println(bst.max(root));
+//        System.out.println(bst.search(root, 56));
+//        System.out.println(bst.max(root));
+//        root = bst.deleteNode(root,30);
+//        root = bst.deleteNode(root,32);
+        root = bst.deleteNode(root,20);
+        bst.displayInOrder(root);
+        System.out.println();
+        System.out.println(root.data);
 
     }
 
