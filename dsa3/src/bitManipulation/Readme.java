@@ -67,4 +67,15 @@ Ex-> 4>>1 = 2
 Ex-> 15>>2 = 3
      15-> 1111
        -> 0011 = 3
+
+Total possible numbers using N bits = 2^N
+Largest number possible using N bits = 2^N-1
+Memory consumed by int = 4 bytes = 32 bits
+Total possible numbers using 32 bits = 2^32
+Largest number possible using 32 bits = 2^32 - 1
+
+Properties of XOR operator:
+1) num^num = 0
+2) num^0 = num
+
  */
