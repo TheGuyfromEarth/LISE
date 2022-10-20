@@ -4,7 +4,7 @@ import java.util.Map;
 public class SubArrayForGivenSum {
 
     public static void main(String[] args) {
-        int[] arr = {10, 20, 5, -10, -5, 5, 10};
+        int[] arr = {10, 10, 5, -10, -5, 5, 10};
         int sum = 15;
         findSubArray(arr, sum);
     }
