@@ -78,4 +78,26 @@ Properties of XOR operator:
 1) num^num = 0
 2) num^0 = num
 
+Total Number of Bits in a given Number -> log(num)+1     (base 2 log)
+num = 12 -> 1100
+num = 8 -> 1000
+num = 5 -> 101
+
+Total number of digits in a given decimal number -> log(num) + 1   (base 10 log)
+num = 12 -> 2
+num = 2789 -> 4
+
+Brian Kernighan's Algorithm
+num & (num-1) = if 0 => num is a power of 2
+              = else it is not a power of 2
+
  */
+
+//  num -> 16
+//  1 0 0 0 0
+//  0 1 1 1 1
+
+// num -> 10
+// 1 0 1 0
+// 1 0 0 1
+
