@@ -27,11 +27,14 @@ public class Driver {
     public static Node createBST(){
         BinarySearchTree bst = new BinarySearchTree();
         Node root = null;
-        root = bst.insertNode(root,20);
+        root = bst.insertNode(root,50);
         root = bst.insertNode(root,32);
         root = bst.insertNode(root,10);
         root = bst.insertNode(root,78);
-        root = bst.insertNode(root,30);
+        root = bst.insertNode(root,40);
         return root;
     }
 }
+//    50
+// 32   78
+//10 40
