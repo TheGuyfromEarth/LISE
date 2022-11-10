@@ -9,10 +9,11 @@ public class FibonacciSeries {
         int n = 8;
 //        System.out.println(fib(n));
         int[] dp = new int[n+1];
-        Arrays.fill(dp,-1);
-        dp[0] = 0;
-        dp[1] = 1;
-        System.out.println(fibWithDP(n, dp));
+        System.out.println(fibUsingTabulation(n, dp));
+//        Arrays.fill(dp,-1);
+//        dp[0] = 0;
+//        dp[1] = 1;
+//        System.out.println(fibWithDP(n, dp));
     }
 
     public static int fib(int n){
@@ -41,6 +42,23 @@ public class FibonacciSeries {
         return num1+num2;
     }
 
+    // finding fibonacci using tabulation
+    public static int fibUsingTabulation(int n,int[] dp){
+        dp[0] = 0;
+        dp[1] = 1;
+
+        for(int i=2;i<=n;i++){
+            dp[i] = dp[i-1]+dp[i-2];
+        }
+        return dp[n];
+    }
+
 }
 
 // fib(5) -> fib(4) + fib(3)
+
+// Steps in Tabulation:
+// 1) Create a storage
+// 2) Assign meaning to storage
+// 3) Identify direction of problem
+// 4) Travel and Solve the problem
