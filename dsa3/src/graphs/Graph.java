@@ -14,7 +14,22 @@ public class Graph {
     }
 
     public void connectEdges(int sourceVertex, int destinationVertex) {
-        adjacencyList[sourceVertex].add(destinationVertex);
+        ArrayList<Integer> sourceVertexList = adjacencyList[sourceVertex];
+        sourceVertexList.add(destinationVertex);
         adjacencyList[destinationVertex].add(sourceVertex);
+    }
+
+    public void dfs(int sourceVertex) {
+        boolean[] visited = new boolean[adjacencyList.length];
+        dfsUtil(sourceVertex, visited);
+    }
+
+    private void dfsUtil(int vertex, boolean[] visited) {
+        visited[vertex] = true;
+        System.out.print(vertex + " ");
+        for (int neighbour : adjacencyList[vertex]) {
+            if (visited[neighbour] == false)
+                dfsUtil(neighbour, visited);
+        }
     }
 }
