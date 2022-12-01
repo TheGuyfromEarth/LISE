@@ -1,6 +1,9 @@
 package graphs;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Queue;
 
 public class Graph {
 
@@ -30,6 +33,33 @@ public class Graph {
         for (int neighbour : adjacencyList[vertex]) {
             if (visited[neighbour] == false)
                 dfsUtil(neighbour, visited);
+        }
+    }
+
+    public void bfs(int sourceVertex) {
+
+        boolean[] visited = new boolean[adjacencyList.length];
+
+        Queue<Integer> queue = new ArrayDeque<>();
+        queue.add(sourceVertex);
+
+        while (!queue.isEmpty()) {
+            // remove
+            int currVertex = queue.poll();
+
+            // print
+            System.out.print(currVertex + " ");
+
+            // mark visited
+            visited[currVertex] = true;
+
+            // add neighbours
+            List<Integer> neighbourList = adjacencyList[currVertex];
+
+            for (int neighbour : neighbourList) {
+                if (!visited[neighbour])
+                    queue.add(neighbour);
+            }
         }
     }
 }

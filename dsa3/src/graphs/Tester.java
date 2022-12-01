@@ -28,7 +28,8 @@ public class Tester {
         // 1a) DFS
         System.out.println("Enter the source vertex: ");
         int srcVertex = input.nextInt();
-        graph.dfs(srcVertex);
+//        graph.dfs(srcVertex);
+        graph.bfs(srcVertex);
 
     }
 }
