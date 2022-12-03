@@ -47,6 +47,10 @@ public class Graph {
             // remove
             int currVertex = queue.poll();
 
+            // this particular vertex is being visited again, hence skipping this iteration
+            if(visited[currVertex])
+                continue;
+
             // print
             System.out.print(currVertex + " ");
 
