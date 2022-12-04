@@ -38,7 +38,7 @@ public class InfectedSpread {
     }
 
     private static int bfs(Graph graph, boolean[] visited, int finalTime) {
-        int count = 1;
+        int count = 0;
         Queue<Pair> queue = new ArrayDeque<>();
         queue.add(new Pair(0, 0));
 
@@ -48,7 +48,7 @@ public class InfectedSpread {
             if (visited[currPair.vertex])
                 continue;
 
-            if (currPair.timeInstant == finalTime)
+            if (currPair.timeInstant > finalTime)
                 return count;
 
             visited[currPair.vertex] = true;
