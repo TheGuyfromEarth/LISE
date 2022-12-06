@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/DSA1/DSA1.iml" filepath="$PROJECT_DIR$/DSA1/DSA1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DSA2/DSA2.iml" filepath="$PROJECT_DIR$/DSA2/DSA2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DSA3/DSA3.iml" filepath="$PROJECT_DIR$/DSA3/DSA3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DSA4/DSA4.iml" filepath="$PROJECT_DIR$/DSA4/DSA4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/LISE.iml" filepath="$PROJECT_DIR$/.idea/LISE.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Mathematic/Mathematic.iml" filepath="$PROJECT_DIR$/Mathematic/Mathematic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hashing/hashing.iml" filepath="$PROJECT_DIR$/hashing/hashing.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oop/oop.iml" filepath="$PROJECT_DIR$/oop/oop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/recursion/recursion.iml" filepath="$PROJECT_DIR$/recursion/recursion.iml" />
+      <module fileurl="file://$PROJECT_DIR$/searchingNsorting/searchingNsorting.iml" filepath="$PROJECT_DIR$/searchingNsorting/searchingNsorting.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sorting/sorting.iml" filepath="$PROJECT_DIR$/sorting/sorting.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stack/stack.iml" filepath="$PROJECT_DIR$/stack/stack.iml" />
+      <module fileurl="file://$PROJECT_DIR$/twoDimArrays/twoDimArrays.iml" filepath="$PROJECT_DIR$/twoDimArrays/twoDimArrays.iml" />
+    </modules>
+  </component>
+</project>
