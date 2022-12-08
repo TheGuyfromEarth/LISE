@@ -9,6 +9,11 @@ public class DisjointSetUnion {
     int[] parent;
     int[] size;
 
+    public DisjointSetUnion(int numVertices){
+        parent = new int[numVertices];
+        size = new int[numVertices];
+    }
+
     // to create a vertex/node
     public void make(int vertex){
         // update parent of vertex as itself
@@ -32,11 +37,11 @@ public class DisjointSetUnion {
         // union by size
         if(size[parentA]<size[parentB]) {
             parent[parentA] = parentB;
-            size[parentA]+=parentB;
+            size[parentB]+=size[parentA];
         }
         else {
             parent[parentB] = parentA;
-            size[parentB]+=parentA;
+            size[parentA]+=size[parentB];
         }
     }
 
