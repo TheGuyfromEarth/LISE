@@ -22,6 +22,8 @@ public class Graph {
         adjacencyList[destinationVertex].add(sourceVertex);
     }
 
+
+    // time complexity => O(|V| + |2E|) => O(|V|+|E|)
     public void dfs(int sourceVertex) {
         boolean[] visited = new boolean[adjacencyList.length];
         dfsUtil(sourceVertex, visited);
@@ -36,6 +38,7 @@ public class Graph {
         }
     }
 
+    // time complexity => O(|V|+|E|)
     public void bfs(int sourceVertex) {
 
         boolean[] visited = new boolean[adjacencyList.length];
