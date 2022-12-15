@@ -22,6 +22,10 @@ public class Graph {
         adjacencyList[destinationVertex].add(sourceVertex);
     }
 
+    public void connectDirectedEdges(int sourceVertex, int destinationVertex) {
+        adjacencyList[sourceVertex].add(destinationVertex);
+    }
+
 
     // time complexity => O(|V| + |2E|) => O(|V|+|E|)
     public void dfs(int sourceVertex) {

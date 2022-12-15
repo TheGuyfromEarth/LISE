@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 
 // All Pair Shortest distance Algorithm
+// valid for both directed and undirected graphs
 public class FloydWarshallAlgorithm {
 
     public static void main(String[] args) {

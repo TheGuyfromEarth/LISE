@@ -2,6 +2,9 @@ package graphs;
 
 import java.util.*;
 
+// used to find shortest distance from a given source to all other nodes in the graph
+// (in terms of weight)
+// valid for both directed and undirected graphs
 public class DijkstrasAlgorithm {
 
     public static void main(String[] args) {
@@ -29,7 +32,7 @@ public class DijkstrasAlgorithm {
         int[] dist = dijkstrasAlgorithm(graph, srcVertex);
         System.out.println(Arrays.toString(dist));
     }
-
+    // Greedy Algorithm
     // time complexity -> O(|V| + |E|log|V|)
     public static int[] dijkstrasAlgorithm(WeightedGraph graph, int sourceVertex) {
         boolean[] visited = new boolean[graph.adjacencyList.length];
