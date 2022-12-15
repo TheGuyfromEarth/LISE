@@ -9,11 +9,11 @@ public class FibonacciSeries {
         int n = 8;
 //        System.out.println(fib(n));
         int[] dp = new int[n+1];
-        System.out.println(fibUsingTabulation(n, dp));
-//        Arrays.fill(dp,-1);
-//        dp[0] = 0;
-//        dp[1] = 1;
-//        System.out.println(fibWithDP(n, dp));
+//        System.out.println(fibUsingTabulation(n, dp));
+        Arrays.fill(dp,-1);
+        dp[0] = 0;
+        dp[1] = 1;
+        System.out.println(fibWithDP(n, dp));
     }
 
     public static int fib(int n){
@@ -31,7 +31,7 @@ public class FibonacciSeries {
             return n;
         }
         if(dp[n] != -1)
-            return dp[n-1]+dp[n-2];
+            return dp[n];
 
         System.out.println("Here for n = "+n);
         int num1 = fibWithDP(n-1,dp);//1
