@@ -46,3 +46,7 @@ public class DisjointSetUnion {
     }
 
 }
+
+// time complexity (amortized time complexity) => O(alpha(V))
+// where alpha(V) is called as Reverse Ackerman Function
+// And practically, it is observed its value turns out to be 4

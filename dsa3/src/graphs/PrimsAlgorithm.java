@@ -16,13 +16,10 @@ public class PrimsAlgorithm {
         System.out.println("Enter number of edges: ");
         int numEdges = input.nextInt();
 
-        List<WtPair> wtPairList = new ArrayList<>();
-
         for (int edge = 0; edge < numEdges; edge++) {
             int source = input.nextInt();
             int destination = input.nextInt();
             int weight = input.nextInt();
-            wtPairList.add(new WtPair(source,destination,weight));
             graph.connectEdges(source, destination, weight);
         }
 
@@ -46,6 +43,7 @@ public class PrimsAlgorithm {
                         continue;
 
                     visited[currPair.neighbourVertex] = true;
+                    // to avoid very first case where source and neighbour are same (0)
                     if(currPair.sourceVertex != currPair.neighbourVertex) {
                         System.out.println("From " + currPair.sourceVertex + " to " + currPair.neighbourVertex);
                         totWt+=currPair.weight;
