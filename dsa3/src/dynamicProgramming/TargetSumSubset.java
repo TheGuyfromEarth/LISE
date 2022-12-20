@@ -4,7 +4,7 @@ package dynamicProgramming;
 // We need to obtain the sum using array subset, if possible, return true, else return false.
 
 // Ex: arr = {2,3,5} => {2},{3},{5},{2,3},{3,5}{2,5},{2,3,5},{}
-// target sum = 9 => true
+// target sum = 10 => true
 
 public class TargetSumSubset {
 
