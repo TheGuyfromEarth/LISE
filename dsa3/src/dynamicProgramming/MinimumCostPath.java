@@ -58,8 +58,8 @@ public class MinimumCostPath {
                 } else if (downVal < rightVal) {
                     queue.add(new Pair(currPair.row + 1, currPair.col, currPair.path + " D "));
                 } else {
-                    queue.add(new Pair(currPair.row, currPair.col + 1, currPair.path + " R "));
                     queue.add(new Pair(currPair.row + 1, currPair.col, currPair.path + " D "));
+                    queue.add(new Pair(currPair.row, currPair.col + 1, currPair.path + " R "));
                 }
             }
         }

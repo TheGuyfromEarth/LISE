@@ -6,13 +6,17 @@ package dynamicProgramming;
 // Ex: arr = {2,3,5} => {2},{3},{5},{2,3},{3,5}{2,5},{2,3,5},{}
 // target sum = 10 => true
 
+import java.util.ArrayDeque;
+import java.util.Queue;
+
 public class TargetSumSubset {
 
     public static void main(String[] args) {
         int[] arr = {2, 3, 4, 1};
-        int targetSum = 8;
+        int targetSum = 6;
         boolean[][] dp = new boolean[arr.length + 1][targetSum + 1];
         System.out.println(targetSumSubset(arr, targetSum, dp));
+        printSubsets(arr,dp,targetSum);
     }
 
     public static boolean targetSumSubset(int[] arr, int targetSum, boolean[][] dp) {
@@ -40,5 +44,37 @@ public class TargetSumSubset {
             }
         }
         return dp[dp.length - 1][targetSum];
+    }
+
+    // print the subsets
+
+    public static void printSubsets(int[] arr, boolean[][] dp, int target){
+
+        Queue<Pair> queue = new ArrayDeque<>();
+        Pair sourcePair = new Pair(dp.length-1, target, "");
+        queue.add(sourcePair);
+
+        while(!queue.isEmpty()){
+            Pair currPair = queue.poll();
+
+            if(currPair.col == 0)
+            {
+                System.out.println(currPair.path);
+                continue;
+            }
+
+            boolean exclusion = dp[currPair.row-1][currPair.col];
+            boolean inclusion = false;
+            if(arr[currPair.row-1]<=currPair.col){
+                int remVal = currPair.col - arr[currPair.row-1];
+                if(dp[currPair.row-1][remVal])
+                    inclusion = true;
+                if(inclusion)
+                    queue.add(new Pair(currPair.row-1,remVal,currPair.path+" "+arr[currPair.row-1]));
+            }
+
+            if(exclusion)
+                queue.add(new Pair(currPair.row-1, currPair.col, currPair.path));
+        }
     }
 }
