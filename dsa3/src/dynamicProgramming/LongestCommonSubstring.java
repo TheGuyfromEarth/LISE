@@ -12,10 +12,12 @@ package dynamicProgramming;
 
 public class LongestCommonSubstring {
     public static void main(String[] args) {
-        String str1 = "break";
-        String str2 = "react";
+        String str1 = "react";
+        String str2 = "break";
         int[][] dp = new int[str1.length() + 1][str2.length() + 1];
-        System.out.println(lenLongestCommonSubstring(str1, str2, dp));
+        int lenLongestCommonSubstring = lenLongestCommonSubstring(str1,str2,dp);
+        System.out.println(lenLongestCommonSubstring);
+        System.out.println(printLongestCommonSubstring(str1, str2, dp, lenLongestCommonSubstring));
     }
 
     public static int lenLongestCommonSubstring(String str1, String str2, int[][] dp) {
@@ -28,6 +30,28 @@ public class LongestCommonSubstring {
                 }
             }
         }
-    return lenLongestCommonSubstring;
+        return lenLongestCommonSubstring;
+    }
+
+    public static String printLongestCommonSubstring(String first, String second, int[][] dp, int lenLongestCommonSubstring) {
+        String longestCommonSubstring = "";
+        boolean flag = false;
+        for(int row = dp.length-1;row>=0; row--){
+            for(int col = dp[0].length-1;col>=0;col--){
+                if(dp[row][col] == lenLongestCommonSubstring){
+                    int temp = lenLongestCommonSubstring;
+                    while(temp!=0){
+                        longestCommonSubstring = second.charAt(col-1) + longestCommonSubstring;
+                        col--;
+                        temp--;
+                    }
+                    flag = true;
+                    break;
+                }
+                if(flag)
+                    break;
+            }
+        }
+        return longestCommonSubstring;
     }
 }

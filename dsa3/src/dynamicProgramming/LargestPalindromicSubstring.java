@@ -3,9 +3,10 @@ package dynamicProgramming;
 // return the length of the largest palindromic substring
 public class LargestPalindromicSubstring {
     public static void main(String[] args) {
-        String str = "baccab";
+        String str = "bcaabc";
         boolean[][] dp = new boolean[str.length()][str.length()];
         System.out.println(lenLargestSubstring(str, dp));
+        printLongestPalindromicSubstring(str, dp);
     }
 
     public static int lenLargestSubstring(String str, boolean[][] dp) {
@@ -30,5 +31,19 @@ public class LargestPalindromicSubstring {
             }
         }
         return maxLengthSubstring;
+    }
+
+    public static void printLongestPalindromicSubstring(String str, boolean[][] dp) {
+        boolean flag = false;
+        for (int temp = dp.length - 1; temp >= 0; temp--) {
+            for (int row = 0, col = temp; col <= dp.length - 1; col++, row++) {
+                if (dp[row][col]) {
+                    flag = true;
+                    System.out.println(str.substring(row, col + 1));
+                }
+            }
+            if(flag)
+                break;
+        }
     }
 }
