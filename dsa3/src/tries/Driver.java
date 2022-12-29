@@ -15,7 +15,11 @@ public class Driver {
         System.out.println(trie.searchWord("Tricks"));
         System.out.println(trie.searchWord("Tri"));
 
+        trie.delete("Trick");
+
         trie.printAllWords();
+
+
 
     }
 }
